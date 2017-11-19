@@ -10,14 +10,14 @@ if __name__ == "__main__":
         print("Uso: spark-submit proyecto4.py <directorioDataset> <k> <maxIteraciones>")
         sys.exit(1)
 
-    #path = "hdfs:///user/vquinte3/examples"
+    #path = "hdfs:///user/vquinte3/examples" Ejemplo de ruta
     path = sys.argv[1] #El primer parametro ingresado por consola corresponde a la ruta del directorio del dataset
     k = int(sys.argv[2]) #El segundo parametro es el k
     maximoIter = int(sys.argv[3]) #El tercer parametro corresponde al maximo de iteraciones
 
 
     sc = SparkContext(appName="Proyecto4")  # SparkContext 
-    spark = SparkSession(sc)
+    spark = SparkSession(sc) #Crea una sesion de spark sql para poder usar algunos metodos necesarios (toDF())
 
     # Lee todos los archivos dentro del directorio especificado y obtiene un RDD
     text_files = sc.wholeTextFiles(path)
@@ -28,7 +28,7 @@ if __name__ == "__main__":
     df.show()
 
     # Crea los tokens que corresponden a las palabras de los documentos
-    tokenizer = Tokenizer(inputCol="Documento(String)", outputCol="tokens")
+    tokenizer = Tokenizer(inputCol="Documento(String)", outputCol="Tokens")
     tokenized = tokenizer.transform(df)
 
     tokenized.show()
@@ -55,5 +55,5 @@ if __name__ == "__main__":
     km_model = kmeans.fit(tfIdfVectors)
 
     clustersTable = km_model.transform(tfIdfVectors)
-
     clustersTable.show()
+    clustersTable.select("Ruta","prediction").repartition(1).write.format("com.databricks.spark.csv").option("header", "true").save("hdfs:///user/vquinte3/outputP4/1");
