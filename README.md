@@ -1,4 +1,4 @@
-#  Clústering de Documentos a partir de Métricas de Similitud basado en Big Data
+#  Proyecto 04 - ST0263 - Clústering de documentos a partir de métricas de similitud basado en Big Data
 
 Integrantes del grupo:
 
