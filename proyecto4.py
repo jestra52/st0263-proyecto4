@@ -7,13 +7,14 @@ from pyspark import SparkContext
 
 if __name__ == "__main__":
     if len(sys.argv) < 4: # Verificar parametros
-        print("Uso: spark-submit proyecto4.py <directorioDataset> <k> <maxIteraciones>")
+        print("Uso: spark-submit proyecto4.py <directorioDataset> <k> <maxIteraciones> <directorioDeSalida>")
         sys.exit(1)
 
     #path = "hdfs:///user/vquinte3/examples" Ejemplo de ruta
     path = sys.argv[1] #El primer parametro ingresado por consola corresponde a la ruta del directorio del dataset
     k = int(sys.argv[2]) #El segundo parametro es el k
     maximoIter = int(sys.argv[3]) #El tercer parametro corresponde al maximo de iteraciones
+    outputPath = sys.argv[4] #Parametro donde se guardara la salida de la ejecucion
 
 
     sc = SparkContext(appName="Proyecto4")  # SparkContext 
@@ -56,4 +57,4 @@ if __name__ == "__main__":
 
     clustersTable = km_model.transform(tfIdfVectors)
     clustersTable.show()
-    clustersTable.select("Ruta","prediction").repartition(1).write.format("com.databricks.spark.csv").option("header", "true").save("hdfs:///user/vquinte3/outputP4/1");
+    clustersTable.select("Ruta","prediction").repartition(1).write.format("com.databricks.spark.csv").option("header", "true").save(outputPath);
