@@ -19,12 +19,12 @@ Para ejecutar el programa se deben ejecutar los siguientes comandos en la termin
 
 De manera local:
 
-    $ spark-submit proyecto4.py <hdfs:///directorioDataset> <k> <maxIteraciones> <hdfs:///directorioDeSalida>
+    $ spark-submit proyecto4.py hdfs://<directorioDataset> <k> <maxIteraciones> hdfs://<directorioDeSalida>
     
 
 Ejecutar en el cluster:
 
-    $ spark-submit --master yarn --deploy-mode cluster --executor-memory <memoriaGB>G --num-executors <numExecutors> proyecto4.py <hdfs:///directorioDataset> <k> <maxIteraciones> <hdfs:///directorioDeSalida>
+    $ spark-submit --master yarn --deploy-mode cluster --executor-memory <memoriaGB>G --num-executors <numExecutors> proyecto4.py hdfs://<directorioDataset> <k> <maxIteraciones> hdfs://<directorioDeSalida>
 
 ## 4. Algoritmos utilizados:
 * TF-IDF (Term frequency-inverse document frequency): Tf-idf (del inglés Term frequency – Inverse document frequency), frecuencia de término – frecuencia inversa de documento (o sea, la frecuencia de ocurrencia del término en la colección de documentos), es una medida numérica que expresa cuán relevante es una palabra para un documento en una colección. Esta medida se utiliza a menudo como un factor de ponderación en la recuperación de información y la minería de texto. El valor tf-idf aumenta proporcionalmente al número de veces que una palabra aparece en el documento, pero es compensada por la frecuencia de la palabra en la colección de documentos, lo que permite manejar el hecho de que algunas palabras son generalmente más comunes que otras.
