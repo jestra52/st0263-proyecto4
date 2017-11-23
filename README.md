@@ -31,6 +31,14 @@ Ejecutar en el cluster:
 * K-means: Algoritmo de agrupamiento, se requiere un numero de clusters a generar y una matriz que contiene la frencuencia de terminos obtenida de un conjunto de datos.
 
 ## 5. Requisitos:
-* Cluster con Spark y Pyspark instalados
+* Cluster con Spark (>= 2.1.1.2.6.1.0-129) 
+* Java Development Kit (>= 1.8.0_144)
+* Python (>= 3.6.2)
+* Pyspark
+* Hadoop (>= 2.7.3.2.6.1.0-129)
 
 ## 6. Referencias:
+* "Clustering with K-Means with Spark and MLlib". tfadmin. Fuente: http://timothyfox.net/?p=15.
+* "TF-IDF, HashingTF and CountVectorizer". Ming Chen. Fuente: https://mingchen0919.github.io/learning-apache-spark/tf-idf.html.
+* "TF-IDF with Spark for the Kaggle popcorn competition". logicalguess (Github user). Fuente: https://github.com/logicalguess/tf-idf-spark-and-python.
+* "Feature Extraction and Transformation - RDD-based API - Spark 2.2.0 Documentation". Spark org. Fuente: https://spark.apache.org/docs/2.2.0/mllib-feature-extraction.html.
