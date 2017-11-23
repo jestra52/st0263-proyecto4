@@ -38,7 +38,7 @@ Ejecutar en el cluster:
 * Hadoop (>= 2.7.3.2.6.1.0-129)
 
 ## 6. Referencias:
-* "Clustering with K-Means with Spark and MLlib". tfadmin. Fuente: http://timothyfox.net/?p=15.
+* "Clustering with K-Means with Spark and MLlib". Timothy Fox. Fuente: http://timothyfox.net/?p=15.
 * "TF-IDF, HashingTF and CountVectorizer". Ming Chen. Fuente: https://mingchen0919.github.io/learning-apache-spark/tf-idf.html.
 * "TF-IDF with Spark for the Kaggle popcorn competition". logicalguess (Github user). Fuente: https://github.com/logicalguess/tf-idf-spark-and-python.
 * "Feature Extraction and Transformation - RDD-based API - Spark 2.2.0 Documentation". Spark org. Fuente: https://spark.apache.org/docs/2.2.0/mllib-feature-extraction.html.
